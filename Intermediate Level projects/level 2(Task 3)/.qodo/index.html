@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BrandUI – Level 2 Tailwind Task</title>
+
+  <!-- ============================= -->
+  <!-- OBJECTIVE 1:
+       Use a popular CSS framework (Tailwind CSS) -->
+  <!-- ============================= -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- ============================= -->
+  <!-- OBJECTIVE 2:
+       Customize default theme (colors, fonts, spacing) -->
+  <!-- ============================= -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              primary: '#6366F1',
+              secondary: '#8B5CF6',
+              accent: '#22C55E',
+              dark: '#020617'
+            }
+          },
+          fontFamily: {
+            brand: ['Poppins', 'sans-serif']
+          },
+          boxShadow: {
+            soft: '0 20px 40px rgba(0,0,0,0.15)'
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- GSAP for animations -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+</head>
+
+<body class="font-brand bg-gradient-to-br from-indigo-50 to-purple-100 dark:from-gray-900 dark:to-gray-800 text-gray-800 dark:text-gray-200 transition-colors duration-300">
+
+<!-- ============================= -->
+<!-- OBJECTIVE 3:
+     Pre-built UI component (Navbar) -->
+<!-- ============================= -->
+<nav class="bg-white/80 dark:bg-gray-900/80 backdrop-blur shadow sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+    <h1 class="text-2xl font-extrabold text-brand-primary">BrandUI</h1>
+
+    <ul class="hidden md:flex space-x-8 font-medium">
+      <li><a href="#home" class="hover:text-brand-primary">Home</a></li>
+      <li><a href="#features" class="hover:text-brand-primary">Features</a></li>
+      <li><a href="#dashboard" class="hover:text-brand-primary">Dashboard</a></li>
+    </ul>
+
+    <!-- Dark mode toggle -->
+    <button id="themeToggle"
+      class="bg-brand-primary text-white px-4 py-2 rounded-full text-sm">
+      🌙 Dark
+    </button>
+  </div>
+</nav>
+
+<!-- ============================= -->
+<!-- OBJECTIVE 4:
+     Responsive Hero Section -->
+<!-- ============================= -->
+<section id="home" class="max-w-7xl mx-auto px-6 py-24 text-center">
+  <h2 class="hero-title text-5xl font-extrabold mb-6">
+    Modern UI with <span class="text-brand-primary">Tailwind CSS</span>
+  </h2>
+  <p class="hero-text max-w-2xl mx-auto text-lg text-gray-600 dark:text-gray-400 mb-10">
+    Responsive, accessible, and performance-optimized interface with
+    custom branding and animations.
+  </p>
+
+  <!-- Buttons as reusable components -->
+  <div class="flex justify-center gap-6 flex-wrap">
+    <button class="bg-brand-primary text-white px-8 py-4 rounded-full shadow-soft hover:scale-105 transition">
+      Get Started
+    </button>
+    <button class="bg-white dark:bg-gray-800 px-8 py-4 rounded-full shadow-soft hover:scale-105 transition">
+      Learn More
+    </button>
+  </div>
+</section>
+
+<!-- ============================= -->
+<!-- OBJECTIVE 5:
+     Consistent design using reusable cards -->
+<!-- ============================= -->
+<section id="features" class="max-w-7xl mx-auto px-6 pb-24">
+  <div class="grid gap-10 md:grid-cols-3">
+
+    <div class="feature-card bg-white/70 dark:bg-gray-800 p-8 rounded-3xl shadow-soft">
+      <h3 class="text-xl font-bold mb-3">⚡ Fast Development</h3>
+      <p class="text-gray-600 dark:text-gray-400">
+        Pre-built Tailwind utilities allow rapid UI development.
+      </p>
+    </div>
+
+    <div class="feature-card bg-white/70 dark:bg-gray-800 p-8 rounded-3xl shadow-soft">
+      <h3 class="text-xl font-bold mb-3">🎨 Custom Branding</h3>
+      <p class="text-gray-600 dark:text-gray-400">
+        Customized colors, typography, and spacing.
+      </p>
+    </div>
+
+    <div class="feature-card bg-white/70 dark:bg-gray-800 p-8 rounded-3xl shadow-soft">
+      <h3 class="text-xl font-bold mb-3">📱 Responsive Design</h3>
+      <p class="text-gray-600 dark:text-gray-400">
+        Mobile-first layout with responsive grid system.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================= -->
+<!-- OBJECTIVE 6:
+     Dashboard layout (additional UI components) -->
+<!-- ============================= -->
+<section id="dashboard" class="max-w-7xl mx-auto px-6 pb-24">
+  <h2 class="text-3xl font-bold mb-10 text-center">Dashboard Overview</h2>
+
+  <div class="grid gap-8 md:grid-cols-3">
+    <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-soft">
+      <p class="text-sm text-gray-500">Users</p>
+      <h3 class="text-3xl font-bold">1,248</h3>
+    </div>
+
+    <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-soft">
+      <p class="text-sm text-gray-500">Revenue</p>
+      <h3 class="text-3xl font-bold">₹86,500</h3>
+    </div>
+
+    <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-soft">
+      <p class="text-sm text-gray-500">Performance</p>
+      <h3 class="text-3xl font-bold">98%</h3>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= -->
+<!-- OBJECTIVE 7:
+     Consistent footer design -->
+<!-- ============================= -->
+<footer class="bg-brand-dark text-gray-400 text-center py-8">
+  <p>© 2026 BrandUI • TailwindCSS Level-2 Project</p>
+</footer>
+
+<!-- ============================= -->
+<!-- OBJECTIVE 8:
+     Dark mode functionality -->
+<!-- ============================= -->
+<script>
+  const toggleBtn = document.getElementById("themeToggle");
+  toggleBtn.addEventListener("click", () => {
+    document.documentElement.classList.toggle("dark");
+    toggleBtn.textContent =
+      document.documentElement.classList.contains("dark")
+      ? "☀ Light"
+      : "🌙 Dark";
+  });
+</script>
+
+<!-- ============================= -->
+<!-- OBJECTIVE 9:
+     GSAP animations for better UX -->
+<!-- ============================= -->
+<script>
+  gsap.from(".hero-title", { y: 50, opacity: 0, duration: 1 });
+  gsap.from(".hero-text", { y: 30, opacity: 0, duration: 1, delay: 0.3 });
+  gsap.from(".feature-card", {
+    y: 40,
+    opacity: 0,
+    duration: 0.8,
+    stagger: 0.2
+  });
+</script>
+
+</body>
+</html>

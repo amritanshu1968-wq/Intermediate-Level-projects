@@ -1,0 +1,24 @@
+:root{
+  --bg:#0f1720;--card:#0b1220;--muted:#9aa4b2;--accent:#5eead4;
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;background:linear-gradient(180deg,#071023 0%,#071122 100%);color:#dbe7f2}
+.container{max-width:900px;margin:48px auto;padding:24px;background:rgba(255,255,255,0.02);border-radius:12px;box-shadow:0 6px 30px rgba(2,6,23,0.6)}
+h1{margin:0 0 16px;font-size:20px}
+.controls{display:flex;gap:12px;align-items:center;margin-bottom:12px}
+.search-wrap input{padding:10px 12px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);min-width:320px;background:transparent;color:inherit}
+select{padding:8px;border-radius:8px;background:transparent;border:1px solid rgba(255,255,255,0.06);color:inherit}
+.status{height:20px;margin-bottom:8px;color:var(--muted);font-size:13px}
+.results{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr;gap:10px}
+.repo{padding:12px;border-radius:8px;background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));display:flex;flex-direction:column;border:1px solid rgba(255,255,255,0.02)}
+.repo .title{font-weight:600;color:#fff}
+.repo .meta{margin-top:6px;color:var(--muted);font-size:13px;display:flex;gap:12px;flex-wrap:wrap}
+.repo a{color:var(--accent);text-decoration:none}
+.empty{color:var(--muted);padding:12px}
+.error{color:#ffb4b4}
+#apikey,
+label:has(#apikey) {
+  display: none;
+}
+
+@media(min-width:700px){.results{grid-template-columns:1fr 1fr}}

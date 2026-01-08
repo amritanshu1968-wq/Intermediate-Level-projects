@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Weather Search — REST API Integration</title>
+  <link rel="stylesheet" href="style.css" />
+  </head>
+<body>
+  <main class="container">
+    <h1>Weather Lookup</h1>
+
+    <div class="controls">
+      <label class="search-wrap">
+        <input id="search" type="search" placeholder="Search city (e.g. London, Tokyo)" autofocus />
+      </label>
+
+      <label>
+        Units:
+        <select id="units">
+          <option value="metric">Metric (°C)</option>
+          <option value="imperial">Imperial (°F)</option>
+        </select>
+      </label>
+
+      <label>
+        OpenWeather API Key (optional):
+        <input id="apikey" type="text" placeholder="f534c84043d5b5df2983de7757e939a4" />
+      </label>
+    </div>
+
+    <div id="status" class="status" aria-live="polite"></div>
+
+    <ul id="results" class="results"></ul>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
